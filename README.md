@@ -1,16 +1,13 @@
 # taskster
 
-A new Flutter project.
+A prototype task management mobile application using the Flutter development framework.
 
-## Getting Started
+## inspiration
 
-This project is a starting point for a Flutter application.
+This application's graphical user interface was heavily inspired by Maulana Farhan's [Task Management App](https://dribbble.com/shots/15718338-Task-Management-App-Project-Management) design. All credit for the graphic design used in this project partially goes to him. Feel free to check out his other works [on dribbble](https://dribbble.com/maulanafaa).
 
-A few resources to get you started if this is your first Flutter project:
+## fork & setup
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+While this project can be adapted to use any cloud-based storage solution, it currently implements Firebase's cloud firestore as its primary cloud storage solution. To properly setup and run this project, you must include your own Firebase GoogleService-Info.plist and google-services.json files for iOS and Android deployment respectively.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+For instructions on setting up a Firebase application and cloud firestore, visit the [Firebase website](firebase.google.com).
