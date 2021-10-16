@@ -9,6 +9,7 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: constants.colors['background'],
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
@@ -47,6 +48,39 @@ class WelcomeScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 16.0,
                   color: constants.colors['textSecondary'],
+                ),
+              ),
+              const Expanded(
+                child: Image(
+                  image: AssetImage('images/working_1.jpg'),
+                  width: 300.0,
+                ),
+              ),
+              Container(
+                alignment: Alignment.bottomRight,
+                width: double.infinity,
+                child: TextButton(
+                  child: const Text(
+                    'Get started',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                    ),
+                  ),
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(
+                        const RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(30.0)))),
+                    padding: MaterialStateProperty.all(
+                      const EdgeInsets.symmetric(
+                          vertical: 20.0, horizontal: 40.0),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color?>(
+                        constants.colors['primary']),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color?>(Colors.white),
+                  ),
+                  onPressed: (null),
                 ),
               ),
             ],
