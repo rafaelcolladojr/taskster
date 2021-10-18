@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:taskster/constants.dart' as constants;
+import 'package:taskster/constants.dart';
+import 'package:taskster/screens/overview_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -9,7 +10,7 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: constants.colors['background'],
+      backgroundColor: Constants.colors['background'],
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
@@ -21,13 +22,13 @@ class WelcomeScreen extends StatelessWidget {
                 horizontalTitleGap: 5.0,
                 leading: Icon(
                   Icons.check_box_outlined,
-                  color: constants.colors['primary'],
+                  color: Constants.colors['primary'],
                   size: 40.0,
                 ),
                 title: Text(
                   'Taskster',
                   style: TextStyle(
-                    color: constants.colors['text'],
+                    color: Constants.colors['text'],
                     fontWeight: FontWeight.bold,
                     fontSize: 20.0,
                   ),
@@ -39,7 +40,7 @@ class WelcomeScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 38.0,
                   fontWeight: FontWeight.w700,
-                  color: constants.colors['text'],
+                  color: Constants.colors['text'],
                 ),
               ),
               const SizedBox(height: 20.0),
@@ -47,7 +48,7 @@ class WelcomeScreen extends StatelessWidget {
                 'Start changing the timelife of life regularly\nin order to increase your productivity',
                 style: TextStyle(
                   fontSize: 16.0,
-                  color: constants.colors['textSecondary'],
+                  color: Constants.colors['textSecondary'],
                 ),
               ),
               const Expanded(
@@ -66,21 +67,10 @@ class WelcomeScreen extends StatelessWidget {
                       fontSize: 18.0,
                     ),
                   ),
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(
-                        const RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(30.0)))),
-                    padding: MaterialStateProperty.all(
-                      const EdgeInsets.symmetric(
-                          vertical: 20.0, horizontal: 40.0),
-                    ),
-                    backgroundColor: MaterialStateProperty.all<Color?>(
-                        constants.colors['primary']),
-                    foregroundColor:
-                        MaterialStateProperty.all<Color?>(Colors.white),
-                  ),
-                  onPressed: (null),
+                  style: Constants.kGetStartedButtonStyle,
+                  onPressed: () {
+                    Navigator.pushNamed(context, OverviewScreen.route);
+                  },
                 ),
               ),
             ],
