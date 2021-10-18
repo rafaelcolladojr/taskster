@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taskster/screens/overview_screen.dart';
+import 'package:taskster/screens/project_detail_screen.dart';
 import 'package:taskster/screens/welcome_screen.dart';
 
 void main() {
@@ -19,8 +20,9 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: WelcomeScreen.route,
       routes: {
-        WelcomeScreen.route: (context) => WelcomeScreen(),
+        WelcomeScreen.route: (context) => const WelcomeScreen(),
         OverviewScreen.route: (context) => OverviewScreen(),
+        ProjectDetailScreen.route: (context) => ProjectDetailScreen(),
       },
     );
   }
