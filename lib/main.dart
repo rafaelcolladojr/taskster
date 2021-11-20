@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taskster/screens/overview_screen.dart';
 import 'package:taskster/screens/project_detail_screen.dart';
 import 'package:taskster/screens/welcome_screen.dart';
@@ -13,17 +14,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Taskster',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return ScreenUtilInit(
+      designSize: const Size(428, 926),
+      builder: () => MaterialApp(
+        title: 'Taskster',
+        theme: ThemeData.light(),
+        initialRoute: WelcomeScreen.route,
+        routes: {
+          WelcomeScreen.route: (context) => const WelcomeScreen(),
+          OverviewScreen.route: (context) => const OverviewScreen(),
+          ProjectDetailScreen.route: (context) => const ProjectDetailScreen(),
+        },
       ),
-      initialRoute: WelcomeScreen.route,
-      routes: {
-        WelcomeScreen.route: (context) => const WelcomeScreen(),
-        OverviewScreen.route: (context) => OverviewScreen(),
-        ProjectDetailScreen.route: (context) => ProjectDetailScreen(),
-      },
     );
   }
 }

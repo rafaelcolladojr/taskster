@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taskster/constants.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -25,15 +26,14 @@ class CustomTextField extends StatelessWidget {
           ),
           border: InputBorder.none,
         ),
-        style: const TextStyle(
-          fontSize: 20.0,
+        style: TextStyle(
+          fontSize: 20.sp,
         ),
         onChanged: onChanged,
       ),
       tileColor: Constants.colors['textFieldBackground'],
-      contentPadding:
-          const EdgeInsets.symmetric(horizontal: 25.0, vertical: 5.0),
-      horizontalTitleGap: 10.0,
+      contentPadding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 5.h),
+      horizontalTitleGap: 10.w,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
           Radius.circular(50.0),

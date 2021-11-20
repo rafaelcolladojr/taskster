@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taskster/constants.dart';
 
 class CustomHeadingDivider extends StatelessWidget {
@@ -24,7 +25,7 @@ class CustomHeadingDivider extends StatelessWidget {
           title,
           style: TextStyle(
             color: Constants.colors['text'],
-            fontSize: 25.0,
+            fontSize: 25.sp,
             fontWeight: FontWeight.w700,
           ),
         ),
@@ -32,7 +33,7 @@ class CustomHeadingDivider extends StatelessWidget {
           child: Text(
             buttonText,
             style:
-                TextStyle(color: Constants.colors['primary'], fontSize: 18.0),
+                TextStyle(color: Constants.colors['primary'], fontSize: 18.sp),
           ),
           onPressed: onPressed,
         )

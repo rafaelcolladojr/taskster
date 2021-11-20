@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:taskster/constants.dart';
 
 class ProjectInfoListTile extends StatelessWidget {
-  ProjectInfoListTile({
+  const ProjectInfoListTile({
     Key? key,
     required this.icon,
     required this.text,

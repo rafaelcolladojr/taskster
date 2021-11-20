@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Constants {
   static const Map<String, Color> colors = {
@@ -17,21 +18,33 @@ class Constants {
     shape: MaterialStateProperty.all(
       const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
-          Radius.circular(30.0),
+          Radius.circular(30),
         ),
       ),
     ),
     padding: MaterialStateProperty.all(
-      const EdgeInsets.symmetric(
-        vertical: 20.0,
-        horizontal: 40.0,
+      EdgeInsets.symmetric(
+        vertical: 20.h,
+        horizontal: 40.w,
       ),
     ),
     backgroundColor: MaterialStateProperty.all<Color?>(colors['primary']),
     foregroundColor: MaterialStateProperty.all<Color?>(Colors.white),
   );
 
-  static var kWhiteTextStyle = TextStyle(
+  static const kWhiteTextStyle = TextStyle(
     color: Colors.white,
+  );
+
+  static var kHeadingOneTextStyle = TextStyle(
+    color: Constants.colors['text'],
+    fontSize: 30.sp,
+    fontWeight: FontWeight.w600,
+  );
+
+  static var kHeadingThreeTextStyle = TextStyle(
+    color: Constants.colors['textDisabled'],
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
   );
 }

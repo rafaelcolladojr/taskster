@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taskster/components/circle_tab_indicator.dart';
 import 'package:taskster/components/custom_heading_divider.dart';
 import 'package:taskster/components/custom_round_icon_button.dart';
@@ -8,7 +9,7 @@ import 'package:taskster/components/task_list_tile.dart';
 import 'package:taskster/constants.dart';
 
 class OverviewScreen extends StatefulWidget {
-  OverviewScreen({Key? key}) : super(key: key);
+  const OverviewScreen({Key? key}) : super(key: key);
 
   static const route = '/overview';
 
@@ -21,15 +22,15 @@ class _OverviewScreenState extends State<OverviewScreen>
   late TabController _controller;
 
   final List<Widget> taskTileList = [
-    TaskListTile(
+    const TaskListTile(
       title: 'Morning standup | Routine',
       isCompleted: true,
     ),
-    TaskListTile(
+    const TaskListTile(
       title: 'Organizing Trello board',
       isCompleted: false,
     ),
-    TaskListTile(
+    const TaskListTile(
       title: 'Check evening availability',
       isCompleted: false,
     ),
@@ -48,76 +49,85 @@ class _OverviewScreenState extends State<OverviewScreen>
       body: SafeArea(
         child: Column(
           children: [
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 34.0, vertical: 0.0),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Alita Leany',
+            Expanded(
+              flex: 3,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 0),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Alita Leany',
+                          style: Constants.kHeadingOneTextStyle,
+                        ),
+                        CustomRoundIconButton(
+                          icon: Icons.notifications_none,
+                          onPressed: () {},
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      width: double.infinity,
+                      child: Text(
+                        'Project Director',
                         style: TextStyle(
-                          color: Constants.colors['text'],
-                          fontSize: 30.0,
-                          fontWeight: FontWeight.w600,
+                          color: Constants.colors['textSecondary'],
                         ),
                       ),
-                      CustomRoundIconButton(
-                        icon: Icons.notifications_none,
-                        onPressed: () {},
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    width: double.infinity,
-                    child: Text(
-                      'Project Director',
-                      style: TextStyle(
-                        color: Constants.colors['textSecondary'],
-                      ),
+                    ),
+                    CustomTextField(
+                      label: const Icon(Icons.search),
+                      hint: 'Search task...',
+                      onChanged: (value) {},
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 5,
+              child: Column(
+                children: [
+                  Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 24.w, vertical: 0),
+                    child: CustomHeadingDivider(
+                      title: 'Projects',
+                      buttonText: 'See all',
+                      onPressed: () {},
                     ),
                   ),
-                  const SizedBox(height: 40.0),
-                  CustomTextField(
-                    label: const Icon(Icons.search),
-                    hint: 'Search task...',
-                    onChanged: (value) {},
-                  ),
-                  const SizedBox(height: 25.0),
-                  CustomHeadingDivider(
-                    title: 'Projects',
-                    buttonText: 'See all',
-                    onPressed: () {},
-                  ),
+                  const KanbanTabView(),
                 ],
               ),
             ),
-            const KanbanTabView(),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 34.0, vertical: 0.0),
-              child: Column(
-                children: [
-                  CustomHeadingDivider(
-                    title: 'Daily tasks',
-                    buttonText: 'Edit',
-                    onPressed: () {},
-                  ),
-                  SizedBox(
-                    height: 200.0,
-                    child: ListView.separated(
-                      itemBuilder: (context, index) {
-                        return taskTileList[index];
-                      },
-                      separatorBuilder: (context, index) {
-                        return const Divider(color: Colors.transparent);
-                      },
-                      itemCount: taskTileList.length,
+            Expanded(
+              flex: 4,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 0.0),
+                child: Column(
+                  children: [
+                    CustomHeadingDivider(
+                      title: 'Daily tasks',
+                      buttonText: 'Edit',
+                      onPressed: () {},
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      height: 200.h,
+                      child: ListView.separated(
+                        itemBuilder: (context, index) {
+                          return taskTileList[index];
+                        },
+                        separatorBuilder: (context, index) {
+                          return const Divider(color: Colors.transparent);
+                        },
+                        itemCount: taskTileList.length,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             Expanded(
@@ -150,11 +160,12 @@ class _OverviewScreenState extends State<OverviewScreen>
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         backgroundColor: Constants.colors['secondary'],
+        elevation: 10.0,
         onPressed: () {},
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

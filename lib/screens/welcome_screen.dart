@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taskster/constants.dart';
 import 'package:taskster/screens/overview_screen.dart';
 
@@ -13,58 +14,58 @@ class WelcomeScreen extends StatelessWidget {
       backgroundColor: Constants.colors['background'],
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+          padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 20.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ListTile(
                 contentPadding: const EdgeInsets.only(),
-                horizontalTitleGap: 5.0,
+                horizontalTitleGap: 5.w,
                 leading: Icon(
                   Icons.check_box_outlined,
                   color: Constants.colors['primary'],
-                  size: 40.0,
+                  size: 40.sp,
                 ),
                 title: Text(
                   'Taskster',
                   style: TextStyle(
                     color: Constants.colors['text'],
                     fontWeight: FontWeight.bold,
-                    fontSize: 20.0,
+                    fontSize: 20.sp,
                   ),
                 ),
               ),
-              const SizedBox(height: 50.0),
+              SizedBox(height: 50.h),
               Text(
                 'Start enjoying\na more organized\nwork life ✨',
                 style: TextStyle(
-                  fontSize: 38.0,
+                  fontSize: 38.sp,
                   fontWeight: FontWeight.w700,
                   color: Constants.colors['text'],
                 ),
               ),
-              const SizedBox(height: 20.0),
+              SizedBox(height: 20.h),
               Text(
                 'Start changing the timelife of life regularly\nin order to increase your productivity',
                 style: TextStyle(
-                  fontSize: 16.0,
+                  fontSize: 16.sp,
                   color: Constants.colors['textSecondary'],
                 ),
               ),
-              const Expanded(
+              Expanded(
                 child: Image(
-                  image: AssetImage('images/working_1.jpg'),
-                  width: 300.0,
+                  image: const AssetImage('images/working_1.jpg'),
+                  width: 300.w,
                 ),
               ),
               Container(
                 alignment: Alignment.bottomRight,
                 width: double.infinity,
                 child: TextButton(
-                  child: const Text(
+                  child: Text(
                     'Get started',
                     style: TextStyle(
-                      fontSize: 18.0,
+                      fontSize: 18.sp,
                     ),
                   ),
                   style: Constants.kGetStartedButtonStyle,

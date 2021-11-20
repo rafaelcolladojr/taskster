@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taskster/constants.dart';
 
 class CustomRoundIconButton extends StatelessWidget {
@@ -17,7 +18,7 @@ class CustomRoundIconButton extends StatelessWidget {
       child: Icon(
         icon,
         color: Constants.colors['primary'],
-        size: 30.0,
+        size: 30.sp,
       ),
       style: ButtonStyle(
         shape: MaterialStateProperty.all(const CircleBorder()),

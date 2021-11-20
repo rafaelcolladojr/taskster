@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taskster/components/circle_tab_indicator.dart';
 import 'package:taskster/components/kanban_project_item.dart';
 import 'package:taskster/constants.dart';
@@ -28,19 +29,19 @@ class _KanbanTabViewState extends State<KanbanTabView>
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 310.0,
+      height: 310.h,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 35.0),
+            padding: EdgeInsets.only(left: 35.w),
             child: SizedBox(
-              width: 300.0,
+              width: 300.w,
               child: TabBar(
                 controller: _tabController,
                 labelColor: Constants.colors['text'],
-                labelStyle: const TextStyle(
-                  fontSize: 18.0,
+                labelStyle: TextStyle(
+                  fontSize: 18.sp,
                   fontWeight: FontWeight.w500,
                 ),
                 unselectedLabelColor: Constants.colors['textDisabled'],
@@ -88,7 +89,7 @@ class _KanbanTabViewState extends State<KanbanTabView>
                   ],
                   options: CarouselOptions(
                     enableInfiniteScroll: false,
-                    height: 190.0,
+                    height: 190.h,
                     enlargeCenterPage: true,
                     enlargeStrategy: CenterPageEnlargeStrategy.height,
                   ),

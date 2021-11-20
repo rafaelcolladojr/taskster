@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:taskster/components/project_info_list_tile.dart';
 import 'package:taskster/components/team_avatar_view.dart';
@@ -33,21 +34,21 @@ class KanbanProjectItem extends StatelessWidget {
             ? Constants.colors['primary']
             : Constants.colors['secondary'],
         child: SizedBox(
-          width: 320.0,
+          width: 320.w,
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.white,
-                    fontSize: 18.0,
+                    fontSize: 18.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 20.0),
+                SizedBox(height: 20.h),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -76,24 +77,24 @@ class KanbanProjectItem extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 20.0,
+                SizedBox(
+                  height: 20.h,
                 ),
                 LinearProgressIndicator(
                   value: progress,
                   backgroundColor: Colors.white,
-                  minHeight: 9.0,
+                  minHeight: 9.h,
                   valueColor: AlwaysStoppedAnimation(primary
                       ? Constants.colors['secondary']
                       : Constants.colors['primary']),
                 ),
-                const SizedBox(
-                  height: 10.0,
+                SizedBox(
+                  height: 10.h,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       'Progress',
                       style: Constants.kWhiteTextStyle,
                     ),
