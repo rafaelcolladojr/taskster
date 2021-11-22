@@ -33,11 +33,12 @@ class KanbanProjectItem extends StatelessWidget {
         color: primary
             ? Constants.colors['primary']
             : Constants.colors['secondary'],
-        child: SizedBox(
-          width: 320.w,
+        child: AspectRatio(
+          aspectRatio: 16 / 9,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
@@ -48,7 +49,6 @@ class KanbanProjectItem extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 20.h),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -77,30 +77,28 @@ class KanbanProjectItem extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                LinearProgressIndicator(
-                  value: progress,
-                  backgroundColor: Colors.white,
-                  minHeight: 9.h,
-                  valueColor: AlwaysStoppedAnimation(primary
-                      ? Constants.colors['secondary']
-                      : Constants.colors['primary']),
-                ),
-                SizedBox(
-                  height: 10.h,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Column(
                   children: [
-                    const Text(
-                      'Progress',
-                      style: Constants.kWhiteTextStyle,
+                    LinearProgressIndicator(
+                      value: progress,
+                      backgroundColor: Colors.white,
+                      minHeight: 9.h,
+                      valueColor: AlwaysStoppedAnimation(primary
+                          ? Constants.colors['secondary']
+                          : Constants.colors['primary']),
                     ),
-                    Text(
-                      '${(progress * 100).toInt()}%',
-                      style: Constants.kWhiteTextStyle,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Progress',
+                          style: Constants.kWhiteTextStyle,
+                        ),
+                        Text(
+                          '${(progress * 100).toInt()}%',
+                          style: Constants.kWhiteTextStyle,
+                        ),
+                      ],
                     ),
                   ],
                 ),

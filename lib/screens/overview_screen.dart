@@ -77,29 +77,36 @@ class _OverviewScreenState extends State<OverviewScreen>
                         ),
                       ),
                     ),
-                    CustomTextField(
-                      label: const Icon(Icons.search),
-                      hint: 'Search task...',
-                      onChanged: (value) {},
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20),
+                      child: CustomTextField(
+                        label: const Icon(Icons.search),
+                        hint: 'Search task...',
+                        onChanged: (value) {},
+                      ),
                     ),
                   ],
                 ),
               ),
             ),
             Expanded(
-              flex: 5,
+              flex: 6,
               child: Column(
                 children: [
                   Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 24.w, vertical: 0),
+                    padding: EdgeInsets.symmetric(horizontal: 24.w),
                     child: CustomHeadingDivider(
                       title: 'Projects',
                       buttonText: 'See all',
                       onPressed: () {},
                     ),
                   ),
-                  const KanbanTabView(),
+                  const Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.only(bottom: 8.0),
+                      child: KanbanTabView(),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -114,8 +121,7 @@ class _OverviewScreenState extends State<OverviewScreen>
                       buttonText: 'Edit',
                       onPressed: () {},
                     ),
-                    SizedBox(
-                      height: 200.h,
+                    Expanded(
                       child: ListView.separated(
                         itemBuilder: (context, index) {
                           return taskTileList[index];
