@@ -6,12 +6,14 @@ class CustomHeadingDivider extends StatelessWidget {
   const CustomHeadingDivider({
     Key? key,
     required this.title,
+    this.titleSize = 25.0,
     required this.buttonText,
     this.scale = 1.0,
     required this.onPressed,
   }) : super(key: key);
 
   final String title;
+  final double titleSize;
   final String buttonText;
   final double scale;
   final VoidCallback onPressed;
@@ -25,7 +27,7 @@ class CustomHeadingDivider extends StatelessWidget {
           title,
           style: TextStyle(
             color: Constants.colors['text'],
-            fontSize: 25.sp,
+            fontSize: titleSize,
             fontWeight: FontWeight.w700,
           ),
         ),
