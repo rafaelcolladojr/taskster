@@ -29,46 +29,49 @@ class AttachmentCarouselItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 250.w,
-      decoration: BoxDecoration(
-        color: Constants.colors['primary'],
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(14.0),
-        child: Row(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(6.0),
-              decoration: BoxDecoration(
-                color: Colors.white.withAlpha(40),
-                borderRadius: BorderRadius.circular(10.0),
+    return Padding(
+      padding: const EdgeInsets.only(right: 10.0),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Constants.colors['primary'],
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(14.0),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(6.0),
+                decoration: BoxDecoration(
+                  color: Colors.white.withAlpha(40),
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: Icon(
+                  getAttachmentTypeIcon(),
+                  color: Colors.white,
+                ),
               ),
-              child: Icon(
-                getAttachmentTypeIcon(),
-                color: Colors.white,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 12.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    filename,
-                    style: Constants.kWhiteTextStyle,
-                  ),
-                  Text(
-                    filesize,
-                    style: TextStyle(
-                      color: Colors.white.withAlpha(140),
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      filename,
+                      style: Constants.kWhiteTextStyle,
                     ),
-                  ),
-                ],
+                    Text(
+                      filesize,
+                      style: TextStyle(
+                        color: Colors.white.withAlpha(140),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
