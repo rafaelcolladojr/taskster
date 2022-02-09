@@ -6,7 +6,9 @@
 
 </br>
 
-
+<kbd>
+<img src="https://github.com/rafaelcolladojr/taskster/raw/master/images/taskster_demo.gif" width="256" />
+</kbd>
 
 </div>
 
