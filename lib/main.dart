@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         title: 'Taskster',
         theme: ThemeData.light(),
         initialRoute: WelcomeScreen.route,
+        debugShowCheckedModeBanner: false,
         routes: {
           WelcomeScreen.route: (context) => const WelcomeScreen(),
           OverviewScreen.route: (context) => const OverviewScreen(),
