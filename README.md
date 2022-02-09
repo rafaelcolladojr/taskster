@@ -1,6 +1,10 @@
 <div align="center">
   
 # Taskster
+  
+[![Flutter - v2.10](https://img.shields.io/badge/Flutter-v2.10-blue)](https://flutter.dev/)
+[![Dart - v2.10](https://img.shields.io/badge/Dart-v2.16-lightblue)](https://dart.dev/)
+[![State Management - Stateful](https://img.shields.io/badge/Stateful%20Management-Stateful-lightblue)](https://dart.dev/)
 
 **A Task management application UI written entirely in [Flutter](https://flutter.dev/)**
 
