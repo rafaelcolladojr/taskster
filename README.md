@@ -9,6 +9,7 @@
 
 
 </div>
+
 ## Inspiration
 
 This application's interface was completely borrowed from Maulana Farhan's [Task Management App](https://dribbble.com/shots/15718338-Task-Management-App-Project-Management) design. All credit for the graphic design used in this project goes to him. Feel free to check out his other works [on dribbble](https://dribbble.com/maulanafaa).
