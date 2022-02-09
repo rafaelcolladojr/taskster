@@ -1,10 +1,17 @@
+<div align="center">
+  
 # Taskster
 
-A prototype task management mobile application using the Flutter development framework.
+**A Task management application UI written entirely in [Flutter](https://flutter.dev/)**
 
+</br>
+
+
+
+</div>
 ## Inspiration
 
-This application's graphical user interface was heavily inspired by Maulana Farhan's [Task Management App](https://dribbble.com/shots/15718338-Task-Management-App-Project-Management) design. All credit for the graphic design used in this project partially goes to him. Feel free to check out his other works [on dribbble](https://dribbble.com/maulanafaa).
+This application's interface was completely borrowed from Maulana Farhan's [Task Management App](https://dribbble.com/shots/15718338-Task-Management-App-Project-Management) design. All credit for the graphic design used in this project goes to him. Feel free to check out his other works [on dribbble](https://dribbble.com/maulanafaa).
 
 The illustration used in the welcome screen was designed by [Cami](https://dribbble.com/camidobrin).
 
