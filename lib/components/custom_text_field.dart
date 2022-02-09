@@ -8,17 +8,20 @@ class CustomTextField extends StatelessWidget {
     this.label,
     this.hint,
     required this.onChanged,
+    this.controller,
   }) : super(key: key);
 
   final Widget? label;
   final String? hint;
   final Function(String) onChanged;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       leading: label,
       title: TextField(
+        controller: controller,
         decoration: InputDecoration(
           hintText: hint,
           hintStyle: TextStyle(
@@ -31,8 +34,8 @@ class CustomTextField extends StatelessWidget {
         ),
         onChanged: onChanged,
       ),
-      tileColor: Constants.colors['textFieldBackground'],
-      contentPadding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 5.h),
+      tileColor: Constants.colors['primaryLight'],
+      contentPadding: EdgeInsets.symmetric(horizontal: 25.w),
       horizontalTitleGap: 10.w,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(

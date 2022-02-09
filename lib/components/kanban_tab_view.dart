@@ -1,5 +1,4 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taskster/components/circle_tab_indicator.dart';
@@ -15,8 +14,7 @@ class KanbanTabView extends StatefulWidget {
   State<KanbanTabView> createState() => _KanbanTabViewState();
 }
 
-class _KanbanTabViewState extends State<KanbanTabView>
-    with SingleTickerProviderStateMixin {
+class _KanbanTabViewState extends State<KanbanTabView> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override

@@ -7,16 +7,16 @@ class CustomHeadingDivider extends StatelessWidget {
     Key? key,
     required this.title,
     this.titleSize = 25.0,
-    required this.buttonText,
+    this.buttonText = "",
     this.scale = 1.0,
-    required this.onPressed,
+    this.onPressed,
   }) : super(key: key);
 
   final String title;
   final double titleSize;
   final String buttonText;
   final double scale;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +34,7 @@ class CustomHeadingDivider extends StatelessWidget {
         TextButton(
           child: Text(
             buttonText,
-            style:
-                TextStyle(color: Constants.colors['primary'], fontSize: 18.sp),
+            style: TextStyle(color: Constants.colors['primary'], fontSize: 18.sp),
           ),
           onPressed: onPressed,
         )
