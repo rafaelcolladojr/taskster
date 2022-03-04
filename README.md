@@ -20,6 +20,14 @@
 
 This application's interface was completely borrowed from Maulana Farhan's [Task Management App](https://dribbble.com/shots/15718338-Task-Management-App-Project-Management) design. All credit for the graphic design used in this project goes to him. Feel free to check out his other works [on dribbble](https://dribbble.com/maulanafaa).
 
+</br>
+
+<div align="center">
+<img width="70%" src="https://user-images.githubusercontent.com/7101404/156841517-90281b22-bb20-4172-a624-a23f035979af.jpeg" />
+</div>
+
+</br>
+
 The illustration used in the welcome screen was designed by [Cami](https://dribbble.com/camidobrin).
 
 ## Fork & Setup
